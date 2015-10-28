@@ -2,7 +2,8 @@
   "name": "c2-debounce-af",
   "version": "1.0.0",
   "description": "debounce at animationframe",
-  "main": "index.js",
+  "jsnext:main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:TheC2Group/debounce-af.git"
@@ -12,5 +13,11 @@
   "bugs": {
     "url": "https://github.com/TheC2Group/debounce-af/issues"
   },
-  "homepage": "https://github.com/TheC2Group/debounce-af"
+  "homepage": "https://github.com/TheC2Group/debounce-af",
+  "scripts": {
+    "es5": "babel index.js > dist/index.js",
+    "standalone": "browserify dist/index.js -o standalone/debounce-af.js --standalone daf",
+    "dist": "uglifyjs standalone/debounce-af.js -o standalone/debounce-af.min.js",
+    "build": "npm run es5 && npm run standalone && npm run dist"
+  }
 }

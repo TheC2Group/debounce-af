@@ -1,7 +1,6 @@
 'use strict';
 
-module.exports = function (fn) {
-
+export default function (fn) {
     if (!(requestAnimationFrame in window)) {
         return fn;
     }
@@ -9,14 +8,12 @@ module.exports = function (fn) {
     var id = null;
 
     return function () {
-        var args = arguments;
-
         if (id !== null) {
             cancelAnimationFrame(id);
         }
 
-        id = requestAnimationFrame(function () {
-            fn.apply(null, args);
+        id = requestAnimationFrame(() => {
+            fn.apply(null, arguments);
             id = null;
         });
     };

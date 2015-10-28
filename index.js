@@ -1,19 +1,19 @@
 'use strict';
 
 export default function (fn) {
-    if (!(requestAnimationFrame in window)) {
+    if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
         return fn;
     }
 
-    var id = null;
+    let id = null;
 
-    return function () {
+    return (...args) => {
         if (id !== null) {
             cancelAnimationFrame(id);
         }
 
         id = requestAnimationFrame(() => {
-            fn.apply(null, arguments);
+            fn(...args);
             id = null;
         });
     };

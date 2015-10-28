@@ -1,5 +1,6 @@
 ## The MIT License (MIT)
 
+Copyright (c) 2015 The C2 Group (c2experience.com)
 Copyright (c) 2014 Matthias Le Brun
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

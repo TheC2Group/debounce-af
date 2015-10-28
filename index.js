@@ -1,15 +1,23 @@
-var af = require("bloody-animationframe")
+'use strict';
 
-module.exports = function(fn){
-  var id
-  return function(){
-    var args = arguments
-    if(id != null) {
-      af.cancelAnimationFrame(id)
+module.exports = function (fn) {
+
+    if (!(requestAnimationFrame in window)) {
+        return fn;
     }
-    id = af.requestAnimationFrame(function(){
-      fn.apply(null, args)
-      id = null
-    })
-  }
-}
+
+    var id = null;
+
+    return function () {
+        var args = arguments;
+
+        if (id !== null) {
+            cancelAnimationFrame(id);
+        }
+
+        id = requestAnimationFrame(function () {
+            fn.apply(null, args);
+            id = null;
+        });
+    };
+};

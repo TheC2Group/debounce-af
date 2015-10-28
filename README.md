@@ -1,21 +1,25 @@
-# debounce af
+debounce af
+===========
 
-[![browser support](https://ci.testling.com/bloodyowl/debounce-af.png)](https://ci.testling.com/bloodyowl/debounce-af)
 
-
-## install
+install
+-------
 
 ```sh
-$ npm install bloody-debounce-af
+$ npm install c2-debounce-af
 ```
 
-## require
 
-```javascript
-var daf = require("bloody-debounce-af")
+require
+-------
+
+```js
+var daf = require("c2-debounce-af");
 ```
 
-## api
+
+api
+---
 
 ### daf(fn) > debounced
 
@@ -23,14 +27,16 @@ creates a function which, when called, waits until there is no call
 until an animation frame is triggered. then executes `fn` with its
 the last arguments that has been passed to `debounced`.
 
-## example
 
-```javascript
-var render = daf(function(text){
-  div.textContent = text
-})
+example
+-------
 
-input.addEventListener("input", function(eventObject){
-  render(eventObject.currentTarget.value)
-})
+```js
+var render = daf(function (text) {
+    div.textContent = text;
+});
+
+input.addEventListener('input', function (eventObject) {
+    render(eventObject.currentTarget.value)
+});
 ```

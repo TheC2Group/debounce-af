@@ -1,0 +1,21 @@
+{
+    "browser": true,
+    "node": true,
+    "jquery": false,
+    "bitwise": true,
+    "camelcase": true,
+    "curly": false,
+    "eqeqeq": true,
+    "es3": true,
+    "immed": true,
+    "indent": 4,
+    "latedef": true,
+    "newcap": true,
+    "nonbsp": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true,
+    "strict": false,
+    "trailing": true,
+    "predef": ["jQuery"]
+}

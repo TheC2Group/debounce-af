@@ -1,9 +1,10 @@
 {
   "name": "c2-debounce-af",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "debounce at animationframe",
-  "jsnext:main": "index.js",
-  "main": "dist/index.js",
+  "jsnext:main": "debounce-af.js",
+  "main": "cjs/debounce-af.js",
+  "export": "daf",
   "repository": {
     "type": "git",
     "url": "git@github.com:TheC2Group/debounce-af.git"
@@ -15,9 +16,14 @@
   },
   "homepage": "https://github.com/TheC2Group/debounce-af",
   "scripts": {
-    "es5": "babel index.js > dist/index.js",
-    "standalone": "browserify dist/index.js -o standalone/debounce-af.js --standalone daf",
-    "dist": "uglifyjs standalone/debounce-af.js -o standalone/debounce-af.min.js",
-    "build": "npm run es5 && npm run standalone && npm run dist"
+    "iife": "rollup -c rollup-iife.config.js",
+    "cjs": "rollup -c rollup-cjs.config.js",
+    "umd": "rollup -c rollup-umd.config.js",
+    "build": "npm run iife && npm run cjs && npm run umd"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.0.0",
+    "rollup": "^0.21.0",
+    "rollup-plugin-babel": "^2.1.0"
   }
 }

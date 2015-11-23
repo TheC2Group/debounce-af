@@ -1,10 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-exports["default"] = function (fn) {
+function debounceAf (fn) {
     if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
         return fn;
     }
@@ -27,6 +23,4 @@ exports["default"] = function (fn) {
     };
 };
 
-;
-module.exports = exports["default"];
-
+module.exports = debounceAf;

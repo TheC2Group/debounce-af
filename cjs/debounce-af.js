@@ -1,7 +1,7 @@
 'use strict';
 
 function debounceAf (fn) {
-    if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
+    if (typeof window !== 'undefined' && !('requestAnimationFrame' in window)) {
         return fn;
     }
 
@@ -21,6 +21,6 @@ function debounceAf (fn) {
             id = null;
         });
     };
-};
+}
 
 module.exports = debounceAf;

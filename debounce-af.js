@@ -1,7 +1,7 @@
 'use strict';
 
 export default function (fn) {
-    if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
+    if (typeof window !== 'undefined' && !('requestAnimationFrame' in window)) {
         return fn;
     }
 
@@ -17,4 +17,4 @@ export default function (fn) {
             id = null;
         });
     };
-};
+}

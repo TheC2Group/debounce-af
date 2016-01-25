@@ -1,7 +1,7 @@
 var daf = (function () { 'use strict';
 
     function debounceAf (fn) {
-        if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
+        if (typeof window !== 'undefined' && !('requestAnimationFrame' in window)) {
             return fn;
         }
 
@@ -21,7 +21,7 @@ var daf = (function () { 'use strict';
                 id = null;
             });
         };
-    };
+    }
 
     return debounceAf;
 

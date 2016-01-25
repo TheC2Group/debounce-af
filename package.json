@@ -1,6 +1,6 @@
 {
   "name": "c2-debounce-af",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "debounce at animationframe",
   "jsnext:main": "debounce-af.js",
   "main": "cjs/debounce-af.js",

@@ -5,7 +5,7 @@
 }(this, function () { 'use strict';
 
     function debounceAf (fn) {
-        if (typeof window !== "undefined" && !(requestAnimationFrame in window)) {
+        if (typeof window !== 'undefined' && !('requestAnimationFrame' in window)) {
             return fn;
         }
 
@@ -25,7 +25,7 @@
                 id = null;
             });
         };
-    };
+    }
 
     return debounceAf;
 
